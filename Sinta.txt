@@ -4,7 +4,9 @@ Luiz Hoffmann
 
 Quer descobrir um novo jogo? Esse Quiz vai te recomendar um jogo de acordo com as informação inserida.. pode ser uma sugestão de jogo leve ou pesado!
 
+FAZER UMA RELACAO ENTRE CLASSIFICAO INDICATIVA AO JOGO, POR EXEMPLO TIRO = + 18
 
+FAZER UM PERGUNTA, TEM AMIGOS? AMIGOS == NAO, MULTIPLAYER == NAO, RECOMENDA JOGOS MAIS SINGLE == MINE, TERRARIA, CREATIVERSE, ROBLOX
 
 Battle Royale: Fortnite, Pubg, H1Z1, Free Fire, Creative Destruction
 FPS: CS GO, COD, Valorant, Rainbow six
