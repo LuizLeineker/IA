@@ -1,0 +1,668 @@
+--------------------------------------------------------------------------------
+SOBRE O SISTEMA ESPECIALISTA
+  -- Nome:    Recomendação de Jogos
+  -- Autores: Luiz Hoffmann
+  -- Resumo:
+     Quer descobrir um novo jogo para seu pc? Esse Quiz vai te recomendar um jogo de acordo com as informação inserida.. pode ser uma sugestão de jogo leve ou pesado!
+
+Operador de maior precedência: conjunção
+Fator de confiança mínimo para aceitação de regra: 50
+
+SOBRE OS ARQUIVOS
+  Arquivo original: C:\USERS\AUTOLOGON\DOWNLOADS\IA (1).BCM
+  O sistema não possui recursos de ajuda.
+--------------------------------------------------------------------------------
+
+VARIÁVEIS
+
+  Financeiro
+    Valores:
+      40  R$
+      +100 R$
+      90 R$
+      00  R$
+    Tipo:
+      univalorada
+  Friends
+    Tipo:
+      univalorada
+  Gastar
+    Tipo:
+      univalorada
+  Hardware
+    Valores:
+      Fraco
+      Bom
+      Medio
+    Tipo:
+      univalorada
+  Idade
+    Valores:
+      +16
+      +12
+      LIVRE
+      +14
+      +18
+    Tipo:
+      univalorada
+  Modalidade
+    Valores:
+      Sandbox
+      BattleRoyale
+      Sobrevivencia
+      Infantil
+      Corrida
+      Luta
+      FPS
+    Tipo:
+      univalorada
+  Multiplayer
+    Valores:
+      Neutral
+      Only Multiplayer
+    Tipo:
+      univalorada
+  Objetivo
+    Valores:
+      Creativerse
+      Brawlhalla
+      GTA V
+      Street Fighter
+      Minecraft
+      RUST
+      LEGO
+      Fortnite
+      Asphalt
+      RaceRoom
+      H1Z1
+      Disney Speedstorm
+      DreamWorks All-Star
+      Black Squad
+      The Finals
+      COD
+      Valorant
+      Unturned
+      Roblox
+      Mortal Kombat
+      Rainbow Six
+      Forza Horizon
+      Need for Speed
+      PUBG
+      Creative Destruction
+      Sonic & All-Stars
+      APB Reloaded
+      Point Blank
+      CSGO
+    Tipo:
+      univalorada
+
+OBJETIVOS
+
+  Objetivo = Jogo
+
+REGRAS
+
+  Regra 1
+    SE Financeiro = 00  R$
+    ENTÃO Gastar = Não CNF 100%
+
+  Regra 2
+    SE Financeiro = +100 R$
+    ENTÃO Gastar = Sim CNF 100%
+
+  Regra 3
+    SE Friends = Não
+    ENTÃO Multiplayer = Only Multiplayer CNF 100%
+
+  Regra 4
+    SE Friends = Sim
+    ENTÃO Multiplayer = Neutral CNF 100%
+
+  Regra 5
+    SE Modalidade = Sandbox
+    OU Modalidade = Infantil
+    OU Modalidade = Corrida
+    ENTÃO Idade = LIVRE CNF 100%
+
+  Regra 6
+    SE Modalidade = Luta
+    ENTÃO Idade = +12 CNF 100%
+
+  Regra 7
+    SE Modalidade = Sobrevivencia
+    ENTÃO Idade = +14 CNF 100%
+
+  Regra 8
+    SE Modalidade = BattleRoyale
+    ENTÃO Idade = +16 CNF 100%
+
+  Regra 9
+    SE Modalidade = FPS
+    ENTÃO Idade = +18 CNF 100%
+
+  Regra 10
+    SE Gastar = Não
+    E  Hardware = Fraco
+    E  Idade = +14
+    ENTÃO Objetivo = Unturned CNF 100%
+
+  Regra 11
+    SE Hardware = Fraco
+    E  Multiplayer = Neutral
+    E  Idade = LIVRE
+    E  Financeiro = +100 R$
+    ENTÃO Objetivo = Minecraft CNF 100%
+
+  Regra 12
+    SE Hardware = Fraco
+    E  Multiplayer = Neutral
+    E  Idade = LIVRE
+    E  Gastar = Não
+    ENTÃO Objetivo = Roblox CNF 100%
+
+  Regra 13
+    SE Financeiro = 40  R$
+    E  Hardware = Fraco
+    E  Idade = +14
+    ENTÃO Objetivo = Creativerse CNF 100%
+
+  Regra 14
+    SE Hardware = Bom
+    E  Idade = +14
+    E  Financeiro = +100 R$
+    ENTÃO Objetivo = RUST CNF 100%
+
+  Regra 15
+    SE Hardware = Bom
+    E  Idade = +18
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = GTA V CNF 100%
+
+  Regra 16
+    SE Gastar = Não
+    E  Hardware = Medio
+    E  Multiplayer = Neutral
+    E  Idade = +18
+    ENTÃO Objetivo = CSGO CNF 100%
+
+  Regra 17
+    SE Gastar = Não
+    E  Hardware = Medio
+    E  Multiplayer = Neutral
+    E  Idade = +16
+    ENTÃO Objetivo = Fortnite CNF 100%
+
+  Regra 18
+    SE Gastar = Não
+    E  Hardware = Medio
+    E  Multiplayer = Only Multiplayer
+    E  Idade = +16
+    ENTÃO Objetivo = H1Z1 CNF 100%
+
+  Regra 19
+    SE Hardware = Medio
+    E  Multiplayer = Only Multiplayer
+    E  Idade = +18
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Rainbow Six CNF 100%
+
+  Regra 20
+    SE Hardware = Medio
+    E  Idade = +12
+    E  Financeiro = +100 R$
+    E  Multiplayer = Only Multiplayer
+    ENTÃO Objetivo = Mortal Kombat CNF 100%
+
+  Regra 21
+    SE Hardware = Medio
+    E  Idade = +12
+    E  Financeiro = +100 R$
+    E  Multiplayer = Neutral
+    ENTÃO Objetivo = Street Fighter CNF 100%
+
+  Regra 22
+    SE Hardware = Bom
+    E  Idade = +18
+    E  Gastar = Não
+    ENTÃO Objetivo = COD CNF 100%
+
+  Regra 23
+    SE Hardware = Fraco
+    E  Idade = +12
+    E  Gastar = Não
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 24
+    SE Hardware = Medio
+    E  Multiplayer = Neutral
+    E  Idade = LIVRE
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = LEGO CNF 100%
+
+  Regra 25
+    SE Hardware = Bom
+    E  Idade = LIVRE
+    E  Financeiro = +100 R$
+    ENTÃO Objetivo = Forza Horizon CNF 100%
+
+  Regra 26
+    SE Hardware = Medio
+    E  Multiplayer = Neutral
+    E  Idade = LIVRE
+    E  Gastar = Não
+    ENTÃO Objetivo = Asphalt CNF 100%
+
+  Regra 27
+    SE Hardware = Medio
+    E  Multiplayer = Neutral
+    E  Idade = LIVRE
+    E  Financeiro = +100 R$
+    ENTÃO Objetivo = Need for Speed CNF 100%
+
+  Regra 28
+    SE Hardware = Fraco
+    E  Multiplayer = Only Multiplayer
+    E  Idade = LIVRE
+    E  Gastar = Não
+    ENTÃO Objetivo = RaceRoom CNF 100%
+
+  Regra 29
+    SE Hardware = Medio
+    E  Multiplayer = Only Multiplayer
+    E  Idade = LIVRE
+    E  Gastar = Não
+    ENTÃO Objetivo = Disney Speedstorm CNF 100%
+
+  Regra 30
+    SE Hardware = Medio
+    E  Multiplayer = Only Multiplayer
+    E  Idade = LIVRE
+    E  Financeiro = +100 R$
+    ENTÃO Objetivo = DreamWorks All-Star CNF 100%
+
+  Regra 31
+    SE Hardware = Medio
+    E  Multiplayer = Only Multiplayer
+    E  Idade = LIVRE
+    E  Financeiro = +100 R$
+    ENTÃO Objetivo = Sonic & All-Stars CNF 100%
+
+  Regra 32
+    SE Hardware = Bom
+    E  Idade = +16
+    E  Gastar = Não
+    ENTÃO Objetivo = PUBG CNF 100%
+
+  Regra 33
+    SE Gastar = Não
+    E  Hardware = Medio
+    E  Multiplayer = Only Multiplayer
+    E  Idade = +18
+    ENTÃO Objetivo = Valorant CNF 100%
+
+  Regra 34
+    SE Hardware = Fraco
+    E  Idade = +16
+    E  Gastar = Não
+    ENTÃO Objetivo = Creative Destruction CNF 100%
+
+  Regra 35
+    SE Hardware = Fraco
+    E  Idade = +18
+    E  Gastar = Não
+    E  Multiplayer = Neutral
+    ENTÃO Objetivo = APB Reloaded CNF 100%
+
+  Regra 36
+    SE Hardware = Fraco
+    E  Idade = +18
+    E  Gastar = Não
+    E  Multiplayer = Only Multiplayer
+    ENTÃO Objetivo = Point Blank CNF 100%
+
+  Regra 37
+    SE Hardware = Medio
+    E  Idade = +14
+    E  Gastar = Não
+    E  Multiplayer = Only Multiplayer
+    ENTÃO Objetivo = Black Squad CNF 100%
+
+  Regra 38
+    SE Hardware = Medio
+    E  Idade = +14
+    E  Gastar = Não
+    E  Multiplayer = Neutral
+    ENTÃO Objetivo = The Finals CNF 100%
+
+  Regra 39
+    SE Hardware = Fraco
+    E  Multiplayer = Neutral
+    E  Idade = +14
+    E  Financeiro = +100 R$
+    ENTÃO Objetivo = Minecraft CNF 100%
+
+  Regra 40
+    SE Hardware = Bom
+    E  Idade = +12
+    E  Financeiro = +100 R$
+    ENTÃO Objetivo = Mortal Kombat CNF 100%
+
+  Regra 41
+    SE Hardware = Bom
+    E  Idade = LIVRE
+    E  Gastar = Não
+    ENTÃO Objetivo = Disney Speedstorm CNF 100%
+
+  Regra 42
+    SE Hardware = Medio
+    E  Idade = +12
+    E  Gastar = Não
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 43
+    SE Hardware = Bom
+    E  Idade = +12
+    E  Gastar = Não
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 44
+    SE Hardware = Bom
+    E  Idade = LIVRE
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = RaceRoom CNF 100%
+
+  Regra 45
+    SE Hardware = Bom
+    E  Idade = LIVRE
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = RaceRoom CNF 100%
+
+  Regra 46
+    SE Hardware = Bom
+    E  Idade = LIVRE
+    E  Gastar = Sim
+    ENTÃO Objetivo = Roblox CNF 100%
+
+  Regra 47
+    SE Hardware = Bom
+    E  Idade = LIVRE
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Roblox CNF 100%
+
+  Regra 48
+    SE Hardware = Bom
+    E  Idade = LIVRE
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Roblox CNF 100%
+
+  Regra 49
+    SE Hardware = Medio
+    E  Idade = LIVRE
+    E  Gastar = Sim
+    ENTÃO Objetivo = Roblox CNF 100%
+
+  Regra 50
+    SE Hardware = Medio
+    E  Idade = LIVRE
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Roblox CNF 100%
+
+  Regra 51
+    SE Hardware = Medio
+    E  Idade = LIVRE
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Roblox CNF 100%
+
+  Regra 52
+    SE Hardware = Fraco
+    E  Idade = LIVRE
+    E  Gastar = Sim
+    ENTÃO Objetivo = Roblox CNF 100%
+
+  Regra 53
+    SE Hardware = Fraco
+    E  Idade = LIVRE
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Roblox CNF 100%
+
+  Regra 54
+    SE Hardware = Fraco
+    E  Idade = LIVRE
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Roblox CNF 100%
+
+  Regra 55
+    SE Hardware = Bom
+    E  Idade = +12
+    E  Gastar = Sim
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 56
+    SE Hardware = Bom
+    E  Idade = +12
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 57
+    SE Hardware = Bom
+    E  Idade = +12
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 58
+    SE Hardware = Medio
+    E  Idade = +12
+    E  Gastar = Sim
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 59
+    SE Hardware = Medio
+    E  Idade = +12
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 60
+    SE Hardware = Medio
+    E  Idade = +12
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 61
+    SE Hardware = Fraco
+    E  Idade = +12
+    E  Gastar = Sim
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 62
+    SE Hardware = Fraco
+    E  Idade = +12
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 63
+    SE Hardware = Fraco
+    E  Idade = +12
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Brawlhalla CNF 100%
+
+  Regra 64
+    SE Hardware = Bom
+    E  Idade = +14
+    E  Gastar = Sim
+    ENTÃO Objetivo = Unturned CNF 100%
+
+  Regra 65
+    SE Hardware = Bom
+    E  Idade = +14
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Unturned CNF 100%
+
+  Regra 66
+    SE Hardware = Bom
+    E  Idade = +14
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Unturned CNF 100%
+
+  Regra 67
+    SE Hardware = Medio
+    E  Idade = +14
+    E  Gastar = Sim
+    ENTÃO Objetivo = Unturned CNF 100%
+
+  Regra 68
+    SE Hardware = Medio
+    E  Idade = +14
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Unturned CNF 100%
+
+  Regra 69
+    SE Hardware = Medio
+    E  Idade = +14
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Unturned CNF 100%
+
+  Regra 70
+    SE Hardware = Fraco
+    E  Idade = +14
+    E  Gastar = Sim
+    ENTÃO Objetivo = Unturned CNF 100%
+
+  Regra 71
+    SE Hardware = Fraco
+    E  Idade = +14
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Unturned CNF 100%
+
+  Regra 72
+    SE Hardware = Fraco
+    E  Idade = +14
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Unturned CNF 100%
+
+  Regra 73
+    SE Hardware = Bom
+    E  Idade = +16
+    E  Gastar = Sim
+    ENTÃO Objetivo = Fortnite CNF 100%
+
+  Regra 74
+    SE Hardware = Bom
+    E  Idade = +16
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Fortnite CNF 100%
+
+  Regra 75
+    SE Hardware = Bom
+    E  Idade = +16
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Fortnite CNF 100%
+
+  Regra 76
+    SE Hardware = Medio
+    E  Idade = +16
+    E  Gastar = Sim
+    ENTÃO Objetivo = Fortnite CNF 100%
+
+  Regra 77
+    SE Hardware = Medio
+    E  Idade = +16
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Fortnite CNF 100%
+
+  Regra 78
+    SE Hardware = Medio
+    E  Idade = +16
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Fortnite CNF 100%
+
+  Regra 79
+    SE Hardware = Fraco
+    E  Idade = +16
+    E  Gastar = Sim
+    ENTÃO Objetivo = Fortnite CNF 100%
+
+  Regra 80
+    SE Hardware = Fraco
+    E  Idade = +16
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = Fortnite CNF 100%
+
+  Regra 81
+    SE Hardware = Fraco
+    E  Idade = +16
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = Fortnite CNF 100%
+
+  Regra 82
+    SE Hardware = Bom
+    E  Idade = +18
+    E  Gastar = Sim
+    ENTÃO Objetivo = CSGO CNF 100%
+
+  Regra 83
+    SE Hardware = Bom
+    E  Idade = +18
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = CSGO CNF 100%
+
+  Regra 84
+    SE Hardware = Bom
+    E  Idade = +18
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = CSGO CNF 100%
+
+  Regra 85
+    SE Hardware = Medio
+    E  Idade = +18
+    E  Gastar = Sim
+    ENTÃO Objetivo = CSGO CNF 100%
+
+  Regra 86
+    SE Hardware = Medio
+    E  Idade = +18
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = CSGO CNF 100%
+
+  Regra 87
+    SE Hardware = Medio
+    E  Idade = +18
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = CSGO CNF 100%
+
+  Regra 88
+    SE Hardware = Fraco
+    E  Idade = +18
+    E  Gastar = Sim
+    ENTÃO Objetivo = CSGO CNF 100%
+
+  Regra 89
+    SE Hardware = Fraco
+    E  Idade = +18
+    E  Financeiro = 90 R$
+    ENTÃO Objetivo = CSGO CNF 100%
+
+  Regra 90
+    SE Hardware = Fraco
+    E  Idade = +18
+    E  Financeiro = 40  R$
+    ENTÃO Objetivo = CSGO CNF 100%
+
+PERGUNTAS
+
+  Variável:Financeiro
+     Pergunta:"Qual valor aproximado voce pretende gastar em um jogo? Se o valor não importar coloque em 100R$"
+     Motivo:"Se quer um jogo gratuito responda 00 R$, se não tem um valor em mente responda 100 R$!
+  Variável:Friends
+     Pergunta:"Tem poucos amigos?"
+     Motivo:"Informe se voce tem poucos amigos, de acordo com sua resposta iremos recomendar um jogo ideial..
+  Variável:Hardware
+     Pergunta:"Qual é o nivel de Hardware do seu computador?"
+  Variável:Modalidade
+     Pergunta:"Informe uma categoria para sugerir um jogo!"
+
+--------------------------------------------------------------------------------
+Gerado com o Expert SINTA versão 1.1b
+(c) 1997 - Universidade Federal do Ceará
+           Laboratório de Inteligência Artificial
+           LIA/UFC
+--------------------------------------------------------------------------------
